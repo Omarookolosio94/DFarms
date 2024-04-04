@@ -12,7 +12,7 @@ const Sidenav = ({
 }) => {
   return (
     <div
-      className={`bg-side fixed h-full w-full bg-[#24292c] transition-all duration-500 ease-in-out ${
+      className={`fixed h-full w-full bg-[#24292c] transition-all duration-500 ease-in-out ${
         isOpen ? "-left-0" : "-left-[100vw]"
       }`}
       style={{

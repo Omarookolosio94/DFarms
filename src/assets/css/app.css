@@ -7,7 +7,7 @@
 @layer components {
 
   .bg-home {
-    background: url("assets/img/farmerInField.jpg") no-repeat;
+    background: url("assets/img/sunset.jpg") no-repeat;
     background-size: cover;
     background-position: center;
   }
