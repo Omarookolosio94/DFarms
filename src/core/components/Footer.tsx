@@ -1,4 +1,5 @@
 import logoImg from "assets/img/logo.png";
+import { ABOUT_INFO } from "core/consts/dFarms";
 import { active_link, main_link } from "core/consts/styling";
 import { Link, NavLink } from "react-router-dom";
 
@@ -35,14 +36,14 @@ const Footer = () => {
                 <p>Deka Farms Nigeria</p>
 
                 <a
-                  href="mailto:oceanglobalchems@gmail.com"
+                  href={`mailto:${ABOUT_INFO?.contact?.Email}`}
                   className="hover:underline"
                 >
-                  contact@dekafarms.com
+                  {ABOUT_INFO?.contact?.Email}
                 </a>
 
                 <a href="tel:+" className="hover:underline">
-                  +234 701 900 0000
+                  {ABOUT_INFO?.contact?.Phone}
                 </a>
               </div>
             </div>
@@ -94,7 +95,6 @@ const Footer = () => {
                 >
                   About
                 </NavLink>
-
               </div>
             </div>
           </div>

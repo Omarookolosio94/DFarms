@@ -1,10 +1,12 @@
-import About from "./views/About";
-import Contact from "./views/Contact";
-import Home from "./views/Home";
-import Notfound from "./views/Notfound";
-import Products from "./views/Products";
-import Services from "./views/Services";
-import SingleProduct from "./views/SingleProduct";
+import React from "react";
+
+const Home = React.lazy(() => import("./views/Home"));
+const About = React.lazy(() => import("./views/About"));
+const Contact = React.lazy(() => import("./views/Contact"));
+const Notfound = React.lazy(() => import("./views/Notfound"));
+const Products = React.lazy(() => import("./views/Products"));
+const Services = React.lazy(() => import("./views/Services"));
+const SingleProduct = React.lazy(() => import("./views/SingleProduct"));
 
 const routes = [
   {

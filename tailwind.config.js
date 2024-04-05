@@ -5,10 +5,12 @@ module.exports = {
     extend: {
       colors: () => ({
         brand: "#eb8b22",
+        "light-brand": '#ffdc4e',
         shade: "#f5f5f5",
         green: "#27BE63",
         "black-shade": "#808080",
-        "gray": "#7D8184"
+        "gray": "#7D8184",
+        black: "#333333"
       }),
       fontFamily: {
         "ui-sans":

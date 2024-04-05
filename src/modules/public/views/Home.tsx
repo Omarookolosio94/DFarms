@@ -1,12 +1,29 @@
-import { btn } from "core/consts/styling";
+import {
+  btn,
+  product_box,
+  product_box_img,
+  product_box_text,
+} from "core/consts/styling";
 import { addMetaData } from "core/helpers/seoHelpers";
 import cowHead from "assets/img/cowhead.png";
 import tillage from "assets/img/tillage.png";
 import fruits from "assets/img/fruits.png";
 import vegetables from "assets/img/vegetables.png";
-import tractor from "assets/img/tractor.png";
+import tractor from "assets/img/tractorColored.png";
 import wheats from "assets/img/sackOfWheat.png";
+import wheatStat from "assets/img/wheats2.png";
+import cattleStat from "assets/img/cowhead2.png";
+import farm from "assets/img/farm.png";
+import tractor2 from "assets/img/tractor.png";
+import coldGrapes from "assets/img/coldGrapes.jpg";
+import vegetables4 from "assets/img/vegetables3.jpg";
+import fishery from "assets/img/fishery.jpeg";
+import cows from "assets/img/cows.jpg";
+import dates from "assets/img/dates.jpg";
+import cornFields from "assets/img/cornField.jpg";
 import { Link } from "react-router-dom";
+import { ABOUT_INFO } from "core/consts/dFarms";
+import { scrollToSection } from "core/helpers/generalHelpers";
 
 const Home = () => {
   const services = [
@@ -29,6 +46,29 @@ const Home = () => {
     {
       name: "Agro Machinery",
       img: tractor,
+    },
+  ];
+
+  const stats = [
+    {
+      name: "Tons of harvest",
+      stat: 17000,
+      icon: wheatStat,
+    },
+    {
+      name: "Units of Cattle",
+      stat: 25600,
+      icon: cattleStat,
+    },
+    {
+      name: "Hectares of Farm",
+      stat: 5800,
+      icon: farm,
+    },
+    {
+      name: "Units of Tech Equipments",
+      stat: 2400,
+      icon: tractor2,
     },
   ];
 
@@ -56,7 +96,8 @@ const Home = () => {
 
               <div className="flex items-center justify-center">
                 <button
-                  className={`${btn} rounded-full border-2 border-brand bg-transparent !px-12 !py-3 uppercase text-white`}
+                  onClick={() => scrollToSection("about-us")}
+                  className={`${btn} rounded-full border-2 border-brand bg-transparent !px-12 !py-3 uppercase text-white hover:bg-brand`}
                 >
                   Discover
                 </button>
@@ -64,13 +105,17 @@ const Home = () => {
             </div>
           </div>
         </div>
+
         <div className="z-[1000] mt-[-60px] flex w-full items-center justify-center gap-2">
           <div className="h-[80px] w-[4px] rounded-full bg-brand"></div>
           <div className="h-[120px] w-[4px] rounded-full bg-brand"></div>
         </div>
       </section>
 
-      <section className="mx-auto flex h-full w-11/12 flex-col items-center justify-center overflow-hidden pt-[120px] md:w-4/5">
+      <section
+        id="about-us"
+        className="mx-auto flex h-full w-11/12 flex-col items-center justify-center overflow-hidden pt-[120px] md:w-4/5"
+      >
         <header className="mx-auto w-full text-center md:w-1/2">
           <span className="mr-2 text-[28px] font-bold uppercase md:text-[42px]">
             Special
@@ -90,7 +135,7 @@ const Home = () => {
             services?.map((service) => (
               <div
                 key={service?.name}
-                className="hover:cursor-pointer660  flex flex-col flex-wrap items-center justify-center gap-3"
+                className="flex flex-col flex-wrap items-center justify-center gap-3 hover:cursor-pointer"
               >
                 <img
                   src={service?.img}
@@ -117,15 +162,17 @@ const Home = () => {
             <div className="mt-10 hidden w-1/2 md:block">
               <Link
                 to="/about"
-                className={`${btn} rounded-full border-2 border-brand bg-transparent !px-12 !py-3 uppercase`}
+                className={`${btn} rounded-full border-2 border-brand bg-transparent !px-12 !py-3 uppercase hover:bg-brand`}
               >
                 More About
               </Link>
             </div>
           </div>
+
           <div className="w-full md:w-1/3">
             <img src={wheats} alt="" />
           </div>
+
           <div className="w-full text-black-shade md:w-1/3">
             <p>
               At the heart of Deka Farms is our dedicated team of farmers,
@@ -138,14 +185,151 @@ const Home = () => {
               make a positive impact on the world around us.
             </p>
 
-            <div className="my-8 w-1/2 mx-auto block text-center md:hidden">
+            <div className="mx-auto my-8 block w-full text-center md:hidden">
               <Link
                 to="/about"
-                className={`${btn} rounded-full border-2 border-brand bg-transparent !px-12 !py-3 uppercase`}
+                className={`${btn} rounded-full border-2 border-brand bg-transparent !px-12 !py-3 uppercase hover:bg-brand`}
               >
                 More About
               </Link>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-light-brand mx-auto my-20 flex h-full w-11/12 flex-col items-center justify-center overflow-hidden py-[60px] md:w-4/5 md:py-[120px]">
+        <div className="grid grid-cols-1 content-center gap-5 md:grid-cols-4 md:gap-3">
+          {stats?.length > 0 &&
+            stats?.map((stat) => (
+              <div
+                key={stat?.name}
+                className="flex items-center justify-center gap-3 hover:cursor-pointer"
+              >
+                <img
+                  src={stat?.icon}
+                  alt={stat?.name}
+                  className="h-[60px] w-auto"
+                />
+                <div>
+                  <p className="text-[28px] font-black leading-none md:text-[42px]">
+                    {Number(stat?.stat).toLocaleString("en-US")}
+                  </p>
+                  <p className="font-extrabold text-[#9b8841]">{stat?.name}</p>
+                </div>
+              </div>
+            ))}
+        </div>
+      </section>
+
+      <section className="mx-auto flex h-full w-11/12 flex-col items-center justify-center overflow-hidden md:w-4/5">
+        <div className="grid w-full grid-cols-1 gap-3 md:grid-cols-1 lg:grid-cols-4">
+          <div className="col-span-full flex h-[325px] items-center overflow-hidden lg:col-span-2">
+            <div>
+              <h5 className="text-[28px] font-black uppercase leading-none md:text-[42px]">
+                Deka <span className="font-thin">Products</span>
+              </h5>
+
+              <p className="my-5">
+                Discover the bounty of Deka Farms with our premium selection of
+                fresh, locally grown products. From crisp vegetables to juicy
+                fruits, our offerings reflect our commitment to quality and
+                sustainability.
+              </p>
+
+              <div className="flex justify-start">
+                <Link
+                  to="/products"
+                  className={`${btn} rounded-full border-2 border-brand bg-transparent !px-12 !py-3 uppercase hover:bg-brand`}
+                >
+                  All Products
+                </Link>
+              </div>
+            </div>
+          </div>
+
+          <div className={product_box}>
+            <img
+              src={coldGrapes}
+              alt="Fruits"
+              className={product_box_img}
+              loading="lazy"
+            />
+            <p className={product_box_text}>Fruits</p>
+          </div>
+
+          <div className={product_box}>
+            <img
+              src={vegetables4}
+              alt="Vegetables"
+              loading="lazy"
+              className={product_box_img}
+            />
+            <p className={product_box_text}>Vegetables</p>
+          </div>
+
+          <div className={product_box}>
+            <img
+              src={cows}
+              alt="Livestocks"
+              loading="lazy"
+              className={product_box_img}
+            />
+            <p className={product_box_text}>Livestocks</p>
+          </div>
+
+          <div className={product_box}>
+            <img
+              src={fishery}
+              alt="Fishery"
+              loading="lazy"
+              className={product_box_img}
+            />
+            <p className={product_box_text}>Fishery</p>
+          </div>
+
+          <div className={`${product_box} !bg-black lg:!col-span-2`}>
+            <p className={product_box_text}>Over 12 variety of Crops</p>
+          </div>
+
+          <div className={`${product_box} lg:!col-span-2 lg:!col-start-2`}>
+            <img
+              src={cornFields}
+              loading="lazy"
+              alt="Wheat"
+              className={product_box_img}
+            />
+            <p className={product_box_text}>Wheat</p>
+          </div>
+
+          <div className={product_box}>
+            <img
+              src={dates}
+              loading="lazy"
+              alt="Spices"
+              className={product_box_img}
+            />
+            <p className={product_box_text}>Spices</p>
+          </div>
+        </div>
+      </section>
+
+      <section className="mt-20 bg-black py-40">
+        <div className="mx-auto flex h-full w-11/12 flex-col items-center justify-center overflow-hidden text-white md:w-4/5">
+          <h5 className="text-[28px] font-black uppercase md:text-[42px]">
+            Get <span className="font-thin">In Touch</span>
+          </h5>
+          <p className="my-5 text-center">
+            Reach out and let's grow together! Get in touch with Deka Farms
+            today.
+          </p>
+
+          <div className="mt-10 w-full md:w-1/2">
+            <a
+              href={`mailto:${ABOUT_INFO?.contact?.Email}`}
+              className={`${btn} rounded-full border-2 border-brand bg-transparent !px-12 !py-3 uppercase hover:bg-brand`}
+            >
+              Send us a Message
+            </a>
           </div>
         </div>
       </section>

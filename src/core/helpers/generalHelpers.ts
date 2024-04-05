@@ -3,7 +3,7 @@ export const isNumeric = (str: string) => {
 };
 
 export const numbersOnly = (e: any) => {
-  if (isNaN(e?.key) && e?.key !== 'Backspace') {
+  if (isNaN(e?.key) && e?.key !== "Backspace") {
     e.preventDefault();
   }
 };
@@ -11,9 +11,9 @@ export const numbersOnly = (e: any) => {
 export const formatDate = (dateString: string) => {
   const date = new Date(dateString);
 
-  const monthName = date.toLocaleString('default', { month: 'short' });
+  const monthName = date.toLocaleString("default", { month: "short" });
 
-  const day = String(date.getDate()).padStart(2, '0');
+  const day = String(date.getDate()).padStart(2, "0");
   const year = date.getFullYear();
 
   return `${monthName} ${day}, ${year}`;
@@ -32,4 +32,24 @@ export const formatCurrency = (value: any) => {
   }
 
   return "₦ 0.00";
+};
+
+export const scrollToSection = (sectionId: string) => {
+  const element = document.getElementById(sectionId);
+
+  if (element) {
+    element.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+};
+
+export const scrollWindowToTop = () => {
+  try {
+    window.scroll({
+      top: 0,
+      left: 0,
+      behavior: "smooth",
+    });
+  } catch (error) {
+    window.scrollTo(0, 0);
+  }
 };

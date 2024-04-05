@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
+import { scrollWindowToTop } from "./generalHelpers";
 
 export const ScrollToTop = () => {
   const location = useLocation();
@@ -7,15 +8,7 @@ export const ScrollToTop = () => {
   const { pathname, search } = location;
 
   useEffect(() => {
-    try {
-      window.scroll({
-        top: 0,
-        left: 0,
-        behavior: "smooth",
-      });
-    } catch (error) {
-      window.scrollTo(0, 0);
-    }
+    scrollWindowToTop();
   }, [pathname, search]);
 
   return null;
