@@ -62,15 +62,6 @@ const Sidenav = ({
               About
             </NavLink>
 
-            <NavLink
-              to="/contact"
-              onClick={() => close()}
-              className={({ isActive }) =>
-                isActive ? activeSidenavLink : sidenavLink
-              }
-            >
-              Contact
-            </NavLink>
           </div>
           <div
             className="absolute right-[30px] top-[30px] text-white"
