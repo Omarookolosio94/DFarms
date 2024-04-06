@@ -1,11 +1,31 @@
 import logoImg from "assets/img/logo.png";
 import { ABOUT_INFO } from "core/consts/dFarms";
-import { active_link, main_link } from "core/consts/styling";
+import { active_link, btn, main_link } from "core/consts/styling";
 import { Link, NavLink } from "react-router-dom";
 
 const Footer = () => {
   return (
     <>
+      <section className="mt-20 bg-black py-40">
+        <div className="mx-auto flex h-full w-11/12 flex-col items-center justify-center overflow-hidden text-white md:w-4/5">
+          <h5 className="text-[28px] font-black uppercase md:text-[42px]">
+            Get <span className="font-thin">In Touch</span>
+          </h5>
+          <p className="my-5 text-center">
+            Reach out and let's grow together! Get in touch with Deka Farms
+            today.
+          </p>
+
+          <div className="mt-10 w-full md:w-1/2">
+            <a
+              href={`mailto:${ABOUT_INFO?.contact?.Email}`}
+              className={`${btn} rounded-full border-2 border-brand bg-transparent !px-12 !py-3 uppercase hover:bg-brand`}
+            >
+              Send us a Message
+            </a>
+          </div>
+        </div>
+      </section>
       <footer className="bg-[#ffffff] text-black">
         <div className="mx-auto w-11/12 pt-[75px] md:w-4/5">
           <div className="flex flex-col justify-between gap-5 md:flex-row md:gap-10">
@@ -33,7 +53,7 @@ const Footer = () => {
             <div className="">
               <div className="flex flex-col items-center gap-2 text-[12px] md:items-end md:gap-5">
                 <h1 className="uppercase text-black-shade">Contact</h1>
-                <p>Deka Farms Nigeria</p>
+                <p>{ABOUT_INFO?.contact?.Location}</p>
 
                 <a
                   href={`mailto:${ABOUT_INFO?.contact?.Email}`}
@@ -42,7 +62,10 @@ const Footer = () => {
                   {ABOUT_INFO?.contact?.Email}
                 </a>
 
-                <a href="tel:+" className="hover:underline">
+                <a
+                  href={`tel:${ABOUT_INFO?.contact?.Phone}`}
+                  className="hover:underline"
+                >
                   {ABOUT_INFO?.contact?.Phone}
                 </a>
               </div>

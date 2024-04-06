@@ -29,7 +29,7 @@ const App = () => {
 
         <button
           onClick={() => scrollWindowToTop()}
-          className="hover:bg-opacity-1 fixed bottom-[10%] right-[10%] flex h-[44px] w-[44px] items-center justify-center rounded-full bg-brand bg-opacity-[.7] text-[22px]"
+          className="hover:bg-opacity-1 fixed bottom-[20px] right-[20px] flex h-[44px] w-[44px] items-center justify-center rounded-full bg-brand bg-opacity-[.7] text-[22px]"
         >
           <ChevronUp />
         </button>

@@ -4,6 +4,7 @@ import logoImg from "assets/img/logo.png";
 import { Menu } from "react-feather";
 import Sidenav from "./Sidenav";
 import { active_link, main_link } from "core/consts/styling";
+import { ABOUT_INFO } from "core/consts/dFarms";
 
 const Navbar = ({ showLinks = true }: { showLinks?: boolean }) => {
   const [showSidenav, setSidenav] = useState(false);
@@ -56,12 +57,12 @@ const Navbar = ({ showLinks = true }: { showLinks?: boolean }) => {
               About
             </NavLink>
 
-            <Link
-              to="/contact"
+            <a
+              href={`mailto:${ABOUT_INFO?.contact?.Email}`}
               className="rounded-full bg-brand px-8 py-3 uppercase text-white"
             >
               Get In Touch
-            </Link>
+            </a>
           </div>
           <button
             className="ml-2 block sm:hidden"

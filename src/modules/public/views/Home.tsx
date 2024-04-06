@@ -5,16 +5,7 @@ import {
   product_box_text,
 } from "core/consts/styling";
 import { addMetaData } from "core/helpers/seoHelpers";
-import cowHead from "assets/img/cowhead.png";
-import tillage from "assets/img/tillage.png";
-import fruits from "assets/img/fruits.png";
-import vegetables from "assets/img/vegetables.png";
-import tractor from "assets/img/tractorColored.png";
-import wheats from "assets/img/sackOfWheat.png";
-import wheatStat from "assets/img/wheats2.png";
-import cattleStat from "assets/img/cowhead2.png";
-import farm from "assets/img/farm.png";
-import tractor2 from "assets/img/tractor.png";
+import sackOfWheat from "assets/img/sackOfWheat.png";
 import coldGrapes from "assets/img/coldGrapes.jpg";
 import vegetables4 from "assets/img/vegetables3.jpg";
 import fishery from "assets/img/fishery.jpeg";
@@ -22,65 +13,20 @@ import cows from "assets/img/cows.jpg";
 import dates from "assets/img/dates.jpg";
 import cornFields from "assets/img/cornField.jpg";
 import { Link } from "react-router-dom";
-import { ABOUT_INFO } from "core/consts/dFarms";
 import { scrollToSection } from "core/helpers/generalHelpers";
+import { SERVICES, STATS } from "core/consts/systemconst";
 
 const Home = () => {
-  const services = [
-    {
-      name: "Farm Livestock",
-      img: cowHead,
-    },
-    {
-      name: "Garden Tillage",
-      img: tillage,
-    },
-    {
-      name: "Fresh Fruits",
-      img: fruits,
-    },
-    {
-      name: "Vegetables",
-      img: vegetables,
-    },
-    {
-      name: "Agro Machinery",
-      img: tractor,
-    },
-  ];
-
-  const stats = [
-    {
-      name: "Tons of harvest",
-      stat: 17000,
-      icon: wheatStat,
-    },
-    {
-      name: "Units of Cattle",
-      stat: 25600,
-      icon: cattleStat,
-    },
-    {
-      name: "Hectares of Farm",
-      stat: 5800,
-      icon: farm,
-    },
-    {
-      name: "Units of Tech Equipments",
-      stat: 2400,
-      icon: tractor2,
-    },
-  ];
-
   return (
     <>
       {addMetaData({
-        title: "DFarms - Home",
-        description: "",
+        title: "Deka Farms - Home",
+        description:
+          " Welcome to Deka Farms, where agriculture meets innovation! At Deka Farms, we pride ourselves on our commitment to sustainable farming practices and providing top- quality products to our customers. From our fertile fields to your table, we strive for excellence in every aspect of our operation  ",
       })}
 
       <section className="bg-home h-[100vh]">
-        <div className="h-full w-full bg-black bg-opacity-[.6]">
+        <div className="h-full w-full bg-black bg-opacity-[.5]">
           <div className="mx-auto flex h-full w-11/12 flex-col items-center justify-center overflow-hidden md:w-4/5">
             <div className="w-full md:w-1/2">
               <h1 className="text-center text-[28px] font-bold uppercase text-white md:text-[42px]">
@@ -130,9 +76,9 @@ const Home = () => {
           </p>
         </header>
 
-        <div className="my-20 grid w-full grid-cols-2 gap-3 md:grid-cols-5">
-          {services?.length > 0 &&
-            services?.map((service) => (
+        <div className="my-20 grid w-full grid-cols-2 gap-3 md:grid-cols-6">
+          {SERVICES?.length > 0 &&
+            SERVICES?.map((service) => (
               <div
                 key={service?.name}
                 className="flex flex-col flex-wrap items-center justify-center gap-3 hover:cursor-pointer"
@@ -170,7 +116,7 @@ const Home = () => {
           </div>
 
           <div className="w-full md:w-1/3">
-            <img src={wheats} alt="" />
+            <img src={sackOfWheat} alt="" />
           </div>
 
           <div className="w-full text-black-shade md:w-1/3">
@@ -197,10 +143,10 @@ const Home = () => {
         </div>
       </section>
 
-      <section className="bg-light-brand mx-auto my-20 flex h-full w-11/12 flex-col items-center justify-center overflow-hidden py-[60px] md:w-4/5 md:py-[120px]">
+      <section className="mx-auto my-20 flex h-full w-11/12 flex-col items-center justify-center overflow-hidden bg-light-brand py-[60px] md:w-4/5 md:py-[120px]">
         <div className="grid grid-cols-1 content-center gap-5 md:grid-cols-4 md:gap-3">
-          {stats?.length > 0 &&
-            stats?.map((stat) => (
+          {STATS?.length > 0 &&
+            STATS?.map((stat) => (
               <div
                 key={stat?.name}
                 className="flex items-center justify-center gap-3 hover:cursor-pointer"
@@ -309,27 +255,6 @@ const Home = () => {
               className={product_box_img}
             />
             <p className={product_box_text}>Spices</p>
-          </div>
-        </div>
-      </section>
-
-      <section className="mt-20 bg-black py-40">
-        <div className="mx-auto flex h-full w-11/12 flex-col items-center justify-center overflow-hidden text-white md:w-4/5">
-          <h5 className="text-[28px] font-black uppercase md:text-[42px]">
-            Get <span className="font-thin">In Touch</span>
-          </h5>
-          <p className="my-5 text-center">
-            Reach out and let's grow together! Get in touch with Deka Farms
-            today.
-          </p>
-
-          <div className="mt-10 w-full md:w-1/2">
-            <a
-              href={`mailto:${ABOUT_INFO?.contact?.Email}`}
-              className={`${btn} rounded-full border-2 border-brand bg-transparent !px-12 !py-3 uppercase hover:bg-brand`}
-            >
-              Send us a Message
-            </a>
           </div>
         </div>
       </section>

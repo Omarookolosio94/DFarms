@@ -31,6 +31,6 @@ export const active_link = "uppercase text-white hover:underline"
 
 export const product_box = "col-span-full lg:col-span-1 relative flex h-[325px] items-center justify-center overflow-hidden hover:bg-[#0056b3] hover:bg-opacity-[.7] hover:cursor-pointer"
 
-export const product_box_text = "z-50 text-[28px] font-black uppercase text-white md:text-[32px]"
+export const product_box_text = "z-50 px-3 lg:px-2 text-center text-[28px] font-black uppercase text-white md:text-[32px]"
 
 export const product_box_img = "absolute left-0 top-0 -z-10 min-h-[325px] w-full"
