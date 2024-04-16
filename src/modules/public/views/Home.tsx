@@ -21,6 +21,7 @@ const Home = () => {
     <>
       {addMetaData({
         title: "Deka Farms - Home",
+        path: "home",
         description:
           " Welcome to Deka Farms, where agriculture meets innovation! At Deka Farms, we pride ourselves on our commitment to sustainable farming practices and providing top- quality products to our customers. From our fertile fields to your table, we strive for excellence in every aspect of our operation  ",
       })}

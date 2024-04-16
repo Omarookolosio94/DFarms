@@ -8,6 +8,7 @@ const Products = () => {
     <>
       {addMetaData({
         title: "DFarms - Products",
+        path: "products",
         description:
           "Explore the bountiful selection of fresh and sustainably grown products at Deka Farms. From farm-fresh fruits and vegetables to organic meats and homemade preserves, our diverse range of offerings promises quality and flavour you can trust. Browse our catalog to discover the goodness of Deka Farms delivered straight to your doorstep.",
       })}

@@ -6,7 +6,8 @@ const Contact = () => {
     <>
       {addMetaData({
         title: "DFarms - Contact",
-        description: ""
+        description: "",
+        path: "contact"
       })}
 
       <div className="m-[0px] mx-auto mb-[34px] h-full w-11/12 overflow-hidden pt-[20px] md:w-4/5">

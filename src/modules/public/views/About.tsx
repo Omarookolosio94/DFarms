@@ -11,6 +11,7 @@ const About = () => {
     <>
       {addMetaData({
         title: "DFarms - About",
+        path: "about",
         description:
           "Discover the story behind Deka Farms, where innovation, sustainability, and a passion for agriculture converge. Learn about our dedicated team and our commitment to creating real value through sustainable practices and innovative solutions. Join us on our journey to transform the agricultural landscape and create a better, more sustainable future for farming.",
       })}

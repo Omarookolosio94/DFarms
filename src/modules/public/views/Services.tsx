@@ -9,6 +9,7 @@ const Services = () => {
     <>
       {addMetaData({
         title: "Deka Farms - Services",
+        path: "services",
         description:
           "Discover the supplementary offerings at Deka Farms tailored to enhance your agricultural operations. From soil health management and irrigation solutions to pest control services and organic certification assistance, our comprehensive range of additional services is designed to meet your diverse needs. Contact us today to learn more about how Deka Farms can support your farming endeavours and maximize your success.",
       })}
